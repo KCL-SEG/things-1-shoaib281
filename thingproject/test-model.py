@@ -79,6 +79,7 @@ class ModelTest(TestCase):
     def _assert_thing_is_invalid(self, message="An invalid thing was accepted"):
         try:
             self.thing.full_clean()
+            print(self.thing.x.description)
             self.fail(message)
         except ValidationError:
             pass
